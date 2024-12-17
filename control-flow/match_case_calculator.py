@@ -1,22 +1,19 @@
-num1 = int(input('Enter the first number: '))
-num2 = int(input('Enter the second number: '))
+num1 = int(input("Enter the first number:"))
+num2 = int(input("Enter the second number:"))
 
-operation = input('Choose the operation(+, -, *, /): ')
+operation = input("Choose the operation (+, -, *, /):")
 
 match operation:
-    case '+':
-        result = num1 + num2
-    case '-':
-        result = num1 - num2
-    case '*':
-        result = num1 * num2
-    case '/':
-        result = num1 / num2
-        if num2 == 0:
+    case "+":
+        print(f"The result is {num1+num2}.")
+    case "-":
+        print(f"The result is {num1-num2}.")
+    case "*":
+        print(f"The result is {num1*num2}.")
+    case "/":
+        try:
+            print(f"The result is {num1/num2}")
+        except:
             print("Cannot divide by zero.")
-        else:
-            result = num1 / num2
-    case _:
-        print('Invalid input.')
-
-print(f'The result is: {result}')
+    case _ :
+        print("ERROR! unrecorgnized operator.")
