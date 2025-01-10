@@ -8,7 +8,7 @@ def convert_to_celsius(fahrenheit):
 
 def convert_to_fahrenheit(celsius):
     global CELSIUS_TO_FAHRENHEIT_FACTOR
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FREEZING_POINT_FAHRENHEIT
+    return (celsius - FREEZING_POINT_FAHRENHEIT) * CELSIUS_TO_FAHRENHEIT_FACTOR
 
 def main():
     try:
