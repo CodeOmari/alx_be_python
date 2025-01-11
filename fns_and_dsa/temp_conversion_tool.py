@@ -1,14 +1,11 @@
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
-FREEZING_POINT_FAHRENHEIT = 32
 
 def convert_to_celsius(fahrenheit):
-    global FAHRENHEIT_TO_CELSIUS_FACTOR
-    return (fahrenheit - FREEZING_POINT_FAHRENHEIT) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    global CELSIUS_TO_FAHRENHEIT_FACTOR
-    return (celsius - FREEZING_POINT_FAHRENHEIT) * CELSIUS_TO_FAHRENHEIT_FACTOR
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     try:
@@ -23,8 +20,8 @@ def main():
             print(f"{temp}°C is {result:.2f}°F")
         else:
             print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
-    except ValueError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
+    except ValueError as e:
+        print(e)
 
 if __name__ == "__main__":
     main()
